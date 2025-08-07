@@ -10,12 +10,20 @@ namespace Assignments_5._4._2
             int[,] matrix = new int[,]
             {
                 {1, 2, 3},
-                {4, 5, 6}
+                {4, 5, 6},
+                {7, 8, 9}
             };
 
-            int firstNum = matrix[0, matrix.GetLength(1) - 1];
-            int lastNum = matrix[matrix.GetLength(0) - 1, 0];
-            int sum = firstNum + lastNum;
+            int sum = 0;
+            int size = matrix.GetLength(0);
+
+            for (int i = 0; i < size; i++)
+            {
+                sum += matrix[i, size - 1 - i];
+            }
+            //int firstNum = matrix[0, matrix.GetLength(1) - 1];
+            //int lastNum = matrix[matrix.GetLength(0) - 1, 0];
+            //int sum = firstNum + lastNum;
             Console.WriteLine($"Addition of the right Diagonal element is: {sum}");
         }
     }
